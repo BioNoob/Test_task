@@ -1,1 +1,0 @@
-﻿INSERT INTO Kurs VALUES (FORMAT(GetDate(), 'MM.dd.yyyy'),'RUB',1)
