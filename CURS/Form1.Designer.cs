@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.getCurse_btn = new System.Windows.Forms.Button();
             this.dGV_out = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -36,11 +37,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Update_direct_btn = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.del_req_base_btn = new System.Windows.Forms.Button();
+            this.refresh_btn = new System.Windows.Forms.Button();
             this.Cond_lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.base_dGV = new System.Windows.Forms.DataGridView();
-            this.refresh_btn = new System.Windows.Forms.Button();
-            this.del_req_base_btn = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dGV_out)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -126,6 +128,8 @@
             this.Update_direct_btn.Size = new System.Drawing.Size(301, 26);
             this.Update_direct_btn.TabIndex = 3;
             this.Update_direct_btn.Text = "Запись напрямую";
+            this.toolTip1.SetToolTip(this.Update_direct_btn, "Запсиать на прямую из источника в базу данных,\r\nбез использования буферной таблиц" +
+        "ы");
             this.Update_direct_btn.UseVisualStyleBackColor = true;
             this.Update_direct_btn.Click += new System.EventHandler(this.Update_direct_btn_Click);
             // 
@@ -156,6 +160,28 @@
             this.splitContainer1.SplitterDistance = 301;
             this.splitContainer1.TabIndex = 6;
             // 
+            // del_req_base_btn
+            // 
+            this.del_req_base_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.del_req_base_btn.Location = new System.Drawing.Point(183, 2);
+            this.del_req_base_btn.Name = "del_req_base_btn";
+            this.del_req_base_btn.Size = new System.Drawing.Size(71, 23);
+            this.del_req_base_btn.TabIndex = 6;
+            this.del_req_base_btn.Text = "Удалить";
+            this.del_req_base_btn.UseVisualStyleBackColor = true;
+            this.del_req_base_btn.Click += new System.EventHandler(this.Del_req_base_btn_Click);
+            // 
+            // refresh_btn
+            // 
+            this.refresh_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.refresh_btn.Location = new System.Drawing.Point(183, 240);
+            this.refresh_btn.Name = "refresh_btn";
+            this.refresh_btn.Size = new System.Drawing.Size(71, 23);
+            this.refresh_btn.TabIndex = 5;
+            this.refresh_btn.Text = "Обновить";
+            this.refresh_btn.UseVisualStyleBackColor = true;
+            this.refresh_btn.Click += new System.EventHandler(this.Refresh_btn_Click);
+            // 
             // Cond_lbl
             // 
             this.Cond_lbl.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -165,6 +191,7 @@
             this.Cond_lbl.TabIndex = 4;
             this.Cond_lbl.Text = "Состояние:  ";
             this.Cond_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cond_lbl.TextChanged += new System.EventHandler(this.Cond_lbl_TextChanged);
             // 
             // label1
             // 
@@ -188,28 +215,6 @@
             this.base_dGV.Name = "base_dGV";
             this.base_dGV.Size = new System.Drawing.Size(251, 206);
             this.base_dGV.TabIndex = 2;
-            // 
-            // refresh_btn
-            // 
-            this.refresh_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.refresh_btn.Location = new System.Drawing.Point(183, 240);
-            this.refresh_btn.Name = "refresh_btn";
-            this.refresh_btn.Size = new System.Drawing.Size(71, 23);
-            this.refresh_btn.TabIndex = 5;
-            this.refresh_btn.Text = "Обновить";
-            this.refresh_btn.UseVisualStyleBackColor = true;
-            this.refresh_btn.Click += new System.EventHandler(this.Refresh_btn_Click);
-            // 
-            // del_req_base_btn
-            // 
-            this.del_req_base_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.del_req_base_btn.Location = new System.Drawing.Point(183, 2);
-            this.del_req_base_btn.Name = "del_req_base_btn";
-            this.del_req_base_btn.Size = new System.Drawing.Size(71, 23);
-            this.del_req_base_btn.TabIndex = 6;
-            this.del_req_base_btn.Text = "Удалить";
-            this.del_req_base_btn.UseVisualStyleBackColor = true;
-            this.del_req_base_btn.Click += new System.EventHandler(this.Del_req_base_btn_Click);
             // 
             // Form1
             // 
@@ -249,6 +254,7 @@
         private System.Windows.Forms.Label Cond_lbl;
         private System.Windows.Forms.Button refresh_btn;
         private System.Windows.Forms.Button del_req_base_btn;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

@@ -92,5 +92,10 @@ namespace CURS
                 Cond_lbl.Text += ee.Message;
             }
         }
+
+        private void Cond_lbl_TextChanged(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip((Label)sender,((Label)sender).Text);
+        }
     }
 }
